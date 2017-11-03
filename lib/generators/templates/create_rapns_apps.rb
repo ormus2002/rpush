@@ -14,3 +14,4 @@ class CreateRapnsApps < ActiveRecord::Migration
     drop_table :rapns_apps
   end
 end
+x
