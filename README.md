@@ -14,6 +14,7 @@ Rpush aims to be the *de facto* gem for sending push notifications in Ruby. Its 
   * [**Google Cloud Messaging**](#google-cloud-messaging)
   * [**Amazon Device Messaging**](#amazon-device-messaging)
   * [**Windows Phone Push Notification Service**](#windows-phone-notification-service)
+  * [**Pushy**](#pushy)
 
 #### Feature Highlights
 
@@ -206,6 +207,43 @@ n.uri = 'http://...'
 n.data = { foo: 'foo', bar: 'bar' }
 n.save!
 ```
+
+#### Windows Badge Push Notifications
+
+Uses the [badge template](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br212849.aspx) and the type `wns/badge`.
+
+```ruby
+n = Rpush::Wns::BadgeNotification.new
+n.app = Rpush::Wns::App.find_by_name("windows_phone_app")
+n.uri = 'http://...'
+n.badge = 4
+n.save!
+```
+
+#### Pushy
+
+[Pushy](https://pushy.me/) is a highly-reliable push notification gateway, based on [MQTT](https://pushy.me/support#what-is-mqtt) protocol for cross platform push notification delivery that includes web, Android, and iOS. One of its advantages is it allows for reliable notification delivery to Android devices in China where Google Cloud Messaging and Firebase Cloud Messaging are blocked and to custom hardware devices that use Android OS but are not using Google Play Services.
+
+Note: current implementation of Pushy only supports Android devices and does not include [subscriptions](https://pushy.me/docs/android/subscribe-topics).
+
+```ruby
+app = Rpush::Pushy::App.new
+app.name = "android_app"
+app.api_key = YOUR_API_KEY
+app.connections = 1
+app.save!
+```
+
+```ruby
+n = Rpush::Pushy::Notification.new
+n.app = Rpush::Pushy::App.find_by_name("android_app")
+n.registration_ids = ["..."]
+n.data = { message: "hi mom!"}
+n.time_to_live = 60 # seconds
+n.save!
+```
+
+For more documentation on [Pushy](https://pushy.me/docs).
 
 ### Running Rpush
 
