@@ -34,6 +34,10 @@ require 'generators/templates/rpush_2_7_0_updates'
 require 'generators/templates/rpush_2_8_0_updates'
 require 'generators/templates/rpush_3_1_0_add_pushy'
 require 'generators/templates/rpush_3_1_1_updates'
+<<<<<<< HEAD
+=======
+require 'generators/templates/rpush_3_1_2_add_apns_p8'
+>>>>>>> dbf3e32... Changed migrations files to the next release: 3.1.2
 
 migrations = [
   AddRpush,
@@ -43,7 +47,8 @@ migrations = [
   Rpush270Updates,
   Rpush280Updates,
   Rpush310AddPushy,
-  Rpush311Updates
+  Rpush311Updates,
+  Rpush312AddApnsp8
 ]
 
 unless ENV['TRAVIS']
