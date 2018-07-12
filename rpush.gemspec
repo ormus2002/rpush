@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_runtime_dependency 'multi_json', '~> 1.0'
-  s.add_runtime_dependency 'net-http-persistent', '< 3.0'
+  s.add_runtime_dependency 'net-http-persistent'
   s.add_runtime_dependency 'net-http2', '~> 0.14'
   s.add_runtime_dependency 'jwt', '~> 2.1.0'
   s.add_runtime_dependency 'activesupport'

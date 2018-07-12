@@ -8,7 +8,6 @@ end
 
 gem 'rake'
 gem 'rspec', '~> 3.4.0'
-gem 'rails', '~> 4.2'
 gem 'database_cleaner'
 gem 'timecop'
 gem 'rpush-redis', '0.4.1'
