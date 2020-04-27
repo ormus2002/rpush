@@ -12,7 +12,6 @@ gem 'rails', '~> 4.2'
 gem 'database_cleaner'
 gem 'timecop'
 gem 'rpush-redis', '0.4.1'
-gem 'rpush-mongoid', '0.1.0'
 
 platform :mri do
   gem 'cane'
