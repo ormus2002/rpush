@@ -1,11 +1,11 @@
 PATH
   remote: .
   specs:
-    rpush (3.0.1)
+    rpush (3.1.1)
       activesupport
       ansi
       multi_json (~> 1.0)
-      net-http-persistent (< 3.0)
+      net-http-persistent
       net-http2 (~> 0.14)
       railties
       thor (>= 0.18.1, < 2.0)
