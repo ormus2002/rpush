@@ -38,7 +38,7 @@ platform :jruby do
   gem 'activerecord-jdbcsqlite3-adapter'
   gem 'activerecord-jdbch2-adapter'
   gem 'jdbc-postgres'
-  gem 'jruby-openssl'
+  gem 'jruby-openssl', '~> 0.9.0'
 end
 
 gemspec
